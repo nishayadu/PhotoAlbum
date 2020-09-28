@@ -1,0 +1,11 @@
+<header class="header bg-info text-white">
+  <div class="container header-container">
+    <div class="brand">MY ALBUM</div>
+    <div class="control" *ngIf="loggedInUser">
+      <span class="profile-name">Hello {{ loggedInUser }}</span>
+      <button type="submit" (click)="logout()" class="btn btn-outline-light">
+        Log Out
+      </button>
+    </div>
+  </div>
+</header>

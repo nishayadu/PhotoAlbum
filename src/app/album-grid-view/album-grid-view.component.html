@@ -1,0 +1,20 @@
+<div class="album-grid-view">
+  <div class="row grid-row" *ngFor="let albumItem of albumData">
+    <div class="col-md-2 col-xs-12 image" [style.background-image]="'url(' + albumItem.thumbnailUrl + ')'">
+      <app-favorite-button [albumItem]="albumItem"></app-favorite-button>
+    </div>
+    <div class="col-md-6 col-xs-12 text-info">
+      <a href="{{ albumItem.url }}" class="text-info" target="_blank">{{
+        albumItem.title
+      }}</a>
+    </div>
+    <div class="col-md-2 col-xs-6 text-dark">
+      <a href="#/user/{{ albumItem.postedBy }}" class="text-dark" target="_blank">{{
+        albumItem.postedBy
+      }}</a>
+    </div>
+    <div class="col-md-2 col-xs-6 text-dark">
+      {{ albumItem.postedAt | date: "fullDate" }}
+    </div>
+  </div>
+</div>

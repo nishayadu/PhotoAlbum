@@ -1,0 +1,4 @@
+<button class="btn favorite-btn" [attr.aria-label]="albumItem.favorite ? 'Remove from favorites' : 'Mark as favorite'"
+  data-balloon-pos="up" (click)="toggleFavorite()">
+  <i class="fa" [ngClass]="albumItem.favorite ? 'fa-heart': 'fa-heart-o'"></i>
+</button>

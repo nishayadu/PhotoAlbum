@@ -1,0 +1,21 @@
+<div class="row album-card-view">
+  <div class="col-lg-4 col-md-6 col-xs-12" *ngFor="let albumItem of albumData">
+    <div class="card">
+      <div class="card-img" [style.background-image]="'url(' + albumItem.thumbnailUrl + ')'">
+        <app-favorite-button [albumItem]="albumItem"></app-favorite-button>
+      </div>
+
+      <div class="card-body">
+        <p class="card-title">
+          <a href="{{ albumItem.url }}" class="text-info" target="_blank">{{
+            albumItem.title
+          }}</a>
+        </p>
+        <div class="post-detail">
+          <a href="#/user/{{ albumItem.postedBy }}" class="text-dark" target="_blank">{{ albumItem.postedBy }}</a>
+          <span class="text-dark">{{ albumItem.postedAt | date: "fullDate" }} </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
